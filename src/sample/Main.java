@@ -10,12 +10,15 @@ public class Main extends Application {
     public static Parent root;
     public static Stage stage;
     public static Scene scene;
+    public static Page[] pages;
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) throws Exception {
+        pages = new Page[0];
         stage = primaryStage;
         root = FXMLLoader.load(getClass().getResource("Main.fxml"));
         scene = new Scene(root);
+        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         stage.setTitle("Minutes");
         stage.setScene(scene);
         primaryStage.show();
